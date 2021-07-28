@@ -1,13 +1,20 @@
 import './App.css'
 import { BrowserRouter } from 'react-router-dom'
 import Nav from './components/Nav/Nav'
-import DogsList from './components/DogsList/DogsList';
+import Routes from './components/Routes/Routes'
 
+import duke from './static/duke.jpg'
+import tubby from './static/tubby.jpg'
+import perry from './static/perry.jpg'
+import whiskey from './static/whiskey.jpg'
 
 const App = () => (
   <div>
     <BrowserRouter>
-      <Nav
+      <Nav dogs={dogs} />
+      <div className="container">
+        <Routes dogs={dogs} />
+      </div>
     </BrowserRouter>
   </div>
 )

@@ -1,5 +1,21 @@
-const Nav = () => (
-    <div>I am nav</div>
-)
+import { NavLink } from "react-router-dom"
+
+const Nav = ({ dogs }) => {
+    const links = dogs.map(dog => (
+        <NavLink 
+            key={dog.name} 
+            to={`/dogs/${dog.name.toLowerCase()}`} 
+        >
+            { dog.name }
+        </NavLink>
+    ))
+
+    return (
+        <nav>
+            <NavLink exact to="/dogs">Home</NavLink>
+            {links}
+        </nav>
+    )
+}
 
 export default Nav
